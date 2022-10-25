@@ -9,14 +9,14 @@ def hash(stri):
        hashval=v-96
    sum=sum+hashval
  return sum
-print(hash("djt"))
+print(hash("xy"))
 def insertlinearprobing(stri,arr):
     key=hash(stri)
     for j in range(len(arr)):
-           ind=(key+j)%len(stri)
+           ind=(key+j)%len(arr)
            if arr[ind]==-1:
-             arr.insert(ind,stri)
-             break
+             arr[ind]=stri
+             return
 def dellinearprobing(stri,arr):
  for i in range(len(arr)):
     if arr[i]==stri:
@@ -34,14 +34,17 @@ s="abcd"
 s1="abcd"
 s2="hlo"
 s3="bye"
-s4="abcd"
-a=[-1 for i in range(50)]
+s4="xy"
+a=[-1 for i in range(10)]
 insertlinearprobing(s,a)
 insertlinearprobing(s1,a)
 insertlinearprobing(s2,a)
 insertlinearprobing(s3,a)
+insertlinearprobing(s4,a)
+print(a)
 searchlinearprobing(s4,a)
 searchlinearprobing("rag",a)
 dellinearprobing(s4,a)
 dellinearprobing("djt",a)
 print(a)
+    
