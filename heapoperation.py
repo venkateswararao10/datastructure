@@ -24,9 +24,6 @@ def maxheapify(arr, n, i):
 
 		maxheapify(arr, n, largest)
 
-
-# The main function to sort an array of given size
-
 def insert(arr,ele):
     size=len(arr)
     n=size
