@@ -119,3 +119,63 @@ root.postorder()
 deleteNode(root, 20)
 deleteNode(root,2)
 root.preorder()
+
+
+def minValueNode(curr):
+         while(curr.left is not None):
+             curr = curr.left
+
+         return curr
+
+# Given a binary search tree and a data, this function
+# delete the key and returns the new root
+    def deleteNode(root, data):
+    # Base Case
+         if root is None:
+            print("tree is empty")
+            return root 
+    # If the data to be deleted
+    # is smaller than the root's
+    # data then it lies in left subtree
+         if (data < root.key):
+            if root.left:
+                 root.left = root.left.deleteNode(data)
+            else:
+                print("given node is not present in tree")
+    # If the data to be delete
+    # is greater than the root's
+    # data then it lies in right subtree
+         elif(data > root.key):
+             if root.right:
+                root.right = root.right.deleteNode(data)
+             else:
+                print("given node is not present in tree")
+    # If data is same as root's data, then this is the node
+    # to be deleted
+    # Case 1 and Case 2
+         else:
+        # Node with no child
+        # Node with only one child
+             if root.left is None:
+                temp=root.right
+                root=None
+                return temp
+             elif root.right is None:
+                temp=root.left
+                root=None
+                return temp
+ 
+        # Node with two children:
+        # Get the inorder successor
+        # (smallest in the right subtree)
+        # Case 3
+            
+             min_value = root.right.minValueNode()
+ 
+        # Copy the inorder successor's
+        # content to this node
+             root.key = min_value.key
+ 
+        # Delete the inorder successor
+             root.right = root.right.deleteNode(min_value.key)
+         return root
