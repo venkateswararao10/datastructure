@@ -5,13 +5,12 @@ def hash(stri,arr):
    v=ord(i)
    sum=sum+v
  return sum%len(arr)
-print(hash("cd"))
 def insertquadraticprobing(stri,arr):
     key=hash(stri,arr)
     if arr[key%len(arr)]==-1:
         arr[key%len(arr)]=stri
         return
-    for j in range(1,len(arr)):
+    for j in range(len(arr)):
            ind=(key+j*j)%len(arr)
            if arr[ind]==-1:
              arr[ind]=stri
