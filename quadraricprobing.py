@@ -1,21 +1,17 @@
 
-def hash(stri):
+def hash(stri,arr):
  sum=0
  for i in stri:
    v=ord(i)
-   if  (v>=65 and v<=90):
-      hashval=v-64
-   elif (v>=97 and v<=122):
-       hashval=v-96
-   sum=sum+hashval
- return sum
+   sum=sum+v
+ return sum%len(arr)
 print(hash("cd"))
 def insertquadraticprobing(stri,arr):
-    key=hash(stri)
+    key=hash(stri,arr)
     if arr[key%len(arr)]==-1:
         arr[key%len(arr)]=stri
         return
-    for j in range(len(arr)):
+    for j in range(1,len(arr)):
            ind=(key+j*j)%len(arr)
            if arr[ind]==-1:
              arr[ind]=stri
