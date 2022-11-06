@@ -8,7 +8,7 @@ def hash(stri):
    elif (v>=97 and v<=122):
        hashval=v-96
    sum=sum+hashval
- return sum
+ return sum%len(arr)
 print(hash("xy"))
 def insertlinearprobing(stri,arr):
     key=hash(stri)
