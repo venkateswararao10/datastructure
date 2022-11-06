@@ -3,11 +3,7 @@ def hash(stri):
  sum=0
  for i in stri:
    v=ord(i)
-   if  (v>=65 and v<=90):
-      hashval=v-64
-   elif (v>=97 and v<=122):
-       hashval=v-96
-   sum=sum+hashval
+   sum=sum+v
  return sum%len(arr)
 print(hash("xy"))
 def insertlinearprobing(stri,arr):
