@@ -1,13 +1,12 @@
 
-def hash(stri):
+def hash(stri,arr):
  sum=0
  for i in stri:
    v=ord(i)
    sum=sum+v
  return sum%len(arr)
-print(hash("xy"))
 def insertlinearprobing(stri,arr):
-    key=hash(stri)
+    key=hash(stri,arr)
     for j in range(len(arr)):
            ind=(key+j)%len(arr)
            if arr[ind]==-1:
