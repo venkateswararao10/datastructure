@@ -7,8 +7,8 @@ def hash(stri,arr):
  return sum%len(arr)
 def insertquadraticprobing(stri,arr):
     key=hash(stri,arr)
-    if arr[key%len(arr)]==-1:
-        arr[key%len(arr)]=stri
+    if arr[key]==-1:
+        arr[key]=stri
         return
     for j in range(len(arr)):
            ind=(key+j*j)%len(arr)
