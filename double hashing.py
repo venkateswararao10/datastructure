@@ -40,7 +40,7 @@ class doublehashing:
         i1=self.hash1(key)
         i2=self.hash2(key)
         i=0
-        while (self.arr[i1]!=-1):
+        while (self.arr[(i1+i*i2)%len(self.arr)]!=-1):
          if self.arr[(i1+i*i2)%len(self.arr)] == key:
             self.arr[(i1+i*i2)%len(self.arr)]="dummy"
             self.size-=1
