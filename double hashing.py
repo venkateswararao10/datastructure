@@ -31,7 +31,7 @@ class doublehashing:
         i=0
         while self.arr[(i1+i*i2)%len(self.arr)] != key:
            if self.arr[((self.hash1(key)+i*self.hash2(key))%len(self.arr))]==-1:
-            print("element not found")
+            print("key not found")
             return False
         i=i+1
         print("key is found")
