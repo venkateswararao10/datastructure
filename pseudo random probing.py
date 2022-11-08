@@ -6,31 +6,30 @@ The buckets are examined in the order f(k), (f(k)+R(i)) % b, 1 <= i < b.
 '''
 import random
 def randlist(arr):
-    l=[i for i in range(1,len(arr))]
-    return l
-
+    l=[i for i in range(1,len(arr))]  #or # r= random.randint(1,len(arr)-1)
+    r=random.choice(l)
+    return r
 def hash(stri,arr):
  sum=0
  for i in stri:
    v=ord(i)
    sum=sum+v
  return sum%len(arr)
-def insertlinearprobing(stri,arr):
-    r=random.choice(randlist(arr)) #or # r= random.randint(1,len(arr)-1)
+def insert(stri,arr): 
     key=hash(stri,arr)
     for j in range(len(arr)):
-           ind=(key+j+r)%len(arr)
+           ind=(key+randlist(arr))%len(arr)
            if arr[ind]==-1:
              arr[ind]=stri
              return
-def dellinearprobing(stri,arr):
+def dele(stri,arr):
  for i in range(len(arr)):
     if arr[i]==stri:
         arr[i]=-1
         print("its deleted")
         return
  print("string not found")
-def searchlinearprobing(stri,arr):
+def search(stri,arr):
     for i in range(len(arr)):
      if arr[i]==stri:
         print(f"{stri} is found")
@@ -42,19 +41,15 @@ s2="hlo"
 s3="bye"
 s4="xy"
 a=[-1 for i in range(10)]
-insertlinearprobing(s,a)
-insertlinearprobing(s1,a)
-insertlinearprobing(s2,a)
-insertlinearprobing(s3,a)
-insertlinearprobing(s4,a)
+insert(s,a)
+insert(s1,a)
+insert(s2,a)
+insert(s3,a)
+insert(s4,a)
+insert('raghu',a)
 print(a)
-searchlinearprobing(s4,a)
-searchlinearprobing("rag",a)
-dellinearprobing(s4,a)
-dellinearprobing("djt",a)
+search(s4,a)
+search("rag",a)
+dele(s,a)
+dele("djt",a)
 print(a)
-    
-
- 
- 
- 
