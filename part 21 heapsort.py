@@ -45,7 +45,7 @@ def heapSort(arr):
 
 # One by one extract elements
 
-	for i in range(n - 1, 0, -1):
+	for i in range(n - 1, -1, -1):
 		(arr[i], arr[0]) = (arr[0], arr[i]) # swap
 		maxheapify(arr, i, 0)
 
