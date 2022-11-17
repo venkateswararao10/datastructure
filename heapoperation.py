@@ -26,13 +26,12 @@ def maxheapify(arr, n, i):
 
 def insert(arr,ele):
     size=len(arr)
-    n=size
     if size==0:
         arr.append(ele)
     else:
         arr.append(ele)
-        for i in range(n // 2 - 1, -1, -1):
-		        maxheapify(arr, n, i)
+        for i in range(len(arr)// 2 - 1, -1, -1):
+		        maxheapify(arr, len(arr), i)
 
 def delete():
     size=len(arr)
