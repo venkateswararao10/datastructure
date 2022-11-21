@@ -91,10 +91,10 @@ class avl:
           return self.rightrotation(root)
       if balfac<-1 and self.getbalance(root.right)<=0:
          return self.leftrotation(root)
-      if balfac>1 and self.getbalance(root.left)>0:
+      if balfac>1 and self.getbalance(root.left)<0:
           root.left=self.leftrotation(root.left)
           return self.rightrotation(root)
-      if balfac<-1 and self.getbalance(root.right)<0:
+      if balfac<-1 and self.getbalance(root.right)>0:
           root.right=self.rightrotation(root.right)
           return self.leftrotation(root)
       return root
