@@ -18,16 +18,16 @@ class avl:
       t2=x.right
       x.right=y
       y.left=t2
-      x.height=1+max(self.getheight(x.left),self.getheight(x.left))
-      y.height=1+max(self.getheight(y.left),self.getheight(y.left))
+      x.height=1+max(self.getheight(x.left),self.getheight(x.right))
+      y.height=1+max(self.getheight(y.left),self.getheight(y.right))
       return x
   def leftrotation(self,x):
       y=x.right
       t2=y.left
       y.left=x
       x.right=t2
-      x.height=1+max(self.getheight(x.left),self.getheight(x.left))
-      y.height=1+max(self.getheight(y.left),self.getheight(y.left))
+      x.height=1+max(self.getheight(x.left),self.getheight(x.right))
+      y.height=1+max(self.getheight(y.left),self.getheight(y.right))
       return y
   def insert(self,root,val):
     if root is None:
